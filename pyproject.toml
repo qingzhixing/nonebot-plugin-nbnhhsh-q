@@ -1,0 +1,19 @@
+[project]
+name = "nonebot-plugin-nbnhhsh-q"
+version = "0.1.0"
+description = "能不能好好说话 - 神奇海螺api接入 @qingzhixing"
+authors = [
+    {name = "qingzhixing", email = "qzsptmail@protonmail.com"},
+]
+dependencies = ["nonebot2>=2.4.1", "httpx>=0.28.1"]
+requires-python = ">=3.9"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
