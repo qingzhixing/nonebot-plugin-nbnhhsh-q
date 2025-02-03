@@ -13,7 +13,6 @@ __plugin_meta__ = PluginMetadata(
     config=Config,
     type="application",
     homepage="https://github.com/qingzhixing/nonebot-plugin-nbnhhsh-q",
-    extra={},
 )
 
 # 输出插件加载日志
