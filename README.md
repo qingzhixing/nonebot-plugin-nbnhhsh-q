@@ -8,7 +8,7 @@
 
 # 🦄 nonebot-plugin-nbnhhsh-q
 
-_✨ 这个项目是干什么用的？ ✨_
+_✨ 这是一个nonebot2机器人框架的插件，用于提供缩写中文的翻译，调用了 【 [神奇海螺 - 能不能好好说话](https://github.com/itorr/nbnhhsh) 】 的api ✨_
 
 <a href="./LICENSE">
     <img src="https://img.shields.io/github/license/qingzhixing/nonebot-plugin-nbnhhsh-q.svg" alt="license">
@@ -19,8 +19,6 @@ _✨ 这个项目是干什么用的？ ✨_
 <img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="python">
 
 </div>
-
-这是一个nonebot2机器人框架的插件，用于提供缩写中文的翻译，调用了 【 [神奇海螺 - 能不能好好说话](https://github.com/itorr/nbnhhsh) 】 的api
 
 ## 📖 介绍
 
