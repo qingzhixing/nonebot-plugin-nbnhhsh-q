@@ -9,10 +9,11 @@ from .config import Config
 __plugin_meta__ = PluginMetadata(
     name="[ 缩写翻译 ] 能不能好好说话 - nbnhhsh",
     description="能不能好好说话 - 使用神奇海螺api查询 @qingzhixing",
-    usage="[缩写英文]是什么|是啥|啥玩意",
+    usage="[缩写英文]是什么|是啥",
     config=Config,
     type="application",
     homepage="https://github.com/qingzhixing/nonebot-plugin-nbnhhsh-q",
+    supported_adapters=None,
 )
 
 # 输出插件加载日志
