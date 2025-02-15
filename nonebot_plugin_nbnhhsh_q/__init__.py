@@ -19,7 +19,7 @@ __plugin_meta__ = PluginMetadata(
 # 输出插件加载日志
 logger.info("插件 nbnhhsh 已加载")
 
-regular_expression = r"[a-z0-9]{2,}+(?:是什么|是啥)"
+regular_expression = r"[a-z0-9]{2,}(?:是什么|是啥)"
 
 config = get_plugin_config(Config)
 
