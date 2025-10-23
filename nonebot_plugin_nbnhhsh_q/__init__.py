@@ -30,10 +30,10 @@ nbnhhsh_macher = on_regex(
 
 @nbnhhsh_macher.handle()
 async def handle_nbnhhsh(keyword: str = RegexStr()):
-    logger.info(f"原始 keywordGroup: {keyword}")  # 添加这一行以检查原始 keywordGroup
+    logger.debug(f"原始 keywordGroup: {keyword}")
 
     keyword_string = keyword.replace("是什么", "").replace("是啥", "")
-    logger.info(f"nbnhhsh keyword: {keyword_string}")
+    logger.debug(f"nbnhhsh keyword: {keyword_string}")
     # 调用神奇海螺api查询
     result_dict = await query_nbnhhsh(keyword_string)
 
@@ -47,7 +47,6 @@ async def handle_nbnhhsh(keyword: str = RegexStr()):
             if len(results) == 1:
                 reply_string += results[0]
             else:
-                # 添加 "或者"
                 reply_string += "\n".join(results[:-1]) + "，" + results[-1]
 
         else:
@@ -60,23 +59,21 @@ async def handle_nbnhhsh(keyword: str = RegexStr()):
 
 NBNHHSH_API_URL = "https://lab.magiconch.com/api/nbnhhsh/"
 
-Guess = {}
+query_buffer = {}
 
 
 async def query_nbnhhsh(keyword: str) -> dict:
-    global Guess  # 声明使用全局变量 Guess
+    global query_buffer
 
-    # 如果Guess字典大小大于1024，则清空它
-    if len(Guess) > 1024:
-        Guess = {}
+    if len(query_buffer) > 1024:
+        query_buffer = {}
 
-    # 提取关键词中的字母数字组合，长度至少为2
     if not keyword:
         return {}
 
-    if Guess.get(keyword):
-        logger.info(f"使用缓存结果: {Guess[keyword]}")
-        return Guess[keyword]
+    if query_buffer.get(keyword):
+        logger.debug(f"使用缓存结果: {query_buffer[keyword]}")
+        return query_buffer[keyword]
 
     try:
         # 发送POST请求
@@ -85,13 +82,13 @@ async def query_nbnhhsh(keyword: str) -> dict:
                 NBNHHSH_API_URL + "guess",
                 json={"text": keyword},
                 headers={"Content-Type": "application/json"},
-                timeout=10,  # 设置超时时间
+                timeout=10,
             )
 
             # 解析响应
             data = response.json()
             if data and len(data) > 0:
-                Guess[keyword] = data[0]
+                query_buffer[keyword] = data[0]
                 return data[0]
             else:
                 return {}
