@@ -6,7 +6,8 @@
 
 <div align="center">
 
-# 🦄 nonebot-plugin-nbnhhsh-q
+# [ Deprecated ] 🦄 nonebot-plugin-nbnhhsh-q
+此项目已不再维护，这个项目只是满足了一下自己的好奇心，用AI辅助写的，我不会维护这个项目了！
 
 _✨ 这是一个nonebot2机器人框架的插件，用于提供缩写中文的翻译，调用了 【 [神奇海螺 - 能不能好好说话](https://github.com/itorr/nbnhhsh) 】 的api ✨_
 
